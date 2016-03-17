@@ -114,10 +114,13 @@ print("d02 len", len(d02))
 
 #decoded_output47 = encoder(128, decode=d02_utf)
 
-decoded_output47 = encoder(128, decode=d02)
+#decoded_output47 = encoder(128, decode=d02)
 #
 #u47 = uncompress(decoded_output47)
-u47 = zl.decompress(decoded_output47)
+#u47 = zl.decompress(decoded_output47)
+u47 = zl.decompress(d02)
+ip_pkt47 = IP(u47[4:])
+ip_pkt47.show()
 #
 #print("Uncompressed  p[47]: ", u47)
 
