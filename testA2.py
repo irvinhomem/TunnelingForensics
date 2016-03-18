@@ -31,9 +31,10 @@ def dn_header(p):
         "lastfrag": ord(chr(p[1])) & 1,
    }
 
-p = rdpcap('bottle.cap')
+#p = rdpcap('../scapy_tutorial/NewPcaps/TunnelCaps_2016/HTTP/amazon.com/amazon.com-2016-02-25-T190359-HTovDNS-incog.pcapng')
+p = rdpcap('../scapy_tutorial/NewPcaps/TunnelCaps_2016/FTP/FTP-PlainTxT/FTovDNS-TextFile-dl-small.pcapng')
 datasent = False
-for i in range(20,100):
+for i in range(0,20):
     if not p[i].haslayer(DNS):
         continue
     if DNSQR in p[i]:
